@@ -31,8 +31,9 @@ print(big_number * 3)
 x = object()
 y = object()
 
-x_list = ["banana"] * 10
-y_list = ["apple"] * 10
+# Todo: creat two lists:
+x_list = ['banana'] * 10
+y_list = ['apple'] * 10
 big_list = x_list + y_list
 
 print("x_list contains %d objects" % len(x_list))
