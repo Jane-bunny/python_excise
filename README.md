@@ -1,5 +1,5 @@
-# python_excise
-Python excises from study
+# python_exercise
+Python exercises from study
 Analyse the examples at the end of this page: https://holypython.com/beginner-python-lessons/lesson-18-python-operators/
 Rewrite the 8 examples above to PEP Standards.
 Put the examples under source control and update your Github or Gitlab Account.
