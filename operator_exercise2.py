@@ -31,7 +31,7 @@ print(big_number * 3)
 x = object()
 y = object()
 
-# Todo: creat two lists:
+# Todo: create two lists:
 x_list = ['banana'] * 10
 y_list = ['apple'] * 10
 big_list = x_list + y_list
