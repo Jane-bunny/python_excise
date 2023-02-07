@@ -71,3 +71,42 @@ print(re.search('foo(?![a-z])', 'foobar'))
 print(re.search('(?<=foo)bar', 'foobar'))
 # Negative lookbehind (?<!<lookbehind_regex>)
 print(re.search('(?<!qux)bar', 'foobar'))
+
+# Miscellaneous Metacharacters
+print(re.search('bar(?#This is a comment) *baz', 'foo bar baz qux'))
+print(re.search('foo|bar|baz', 'bar'))
+print(re.search('(foo|bar|baz)+', 'foofoofoo'))
+
+# Flags
+# re.I
+print(re.search('a+', 'aaaAAA'))
+print(re.search('a+', 'aaaAAA', re.I))
+
+# re.M
+s = 'foo\nbar\nbaz'
+print(re.search('^bar', s, re.MULTILINE))
+
+# re.S (Short of re.DOTALL)
+# re. DOTALL
+print(re.search('foo.bar', 'foo\nbar'))
+print(re.search('foo.bar', 'foo\nbar', re.DOTALL))
+
+# re.X
+# re. VERBOSE
+regex = r'^(\(\d{3}\))?\s*\d{3}[-.]\d{4}$'
+print(re.search(regex, '(712)414-9229'))
+
+regex = r'''^      # Start of string
+...(\(\d{3}\))?    # Optional area code
+...\s*             # Optional whitespace
+...\d{3}           # Three-digit prefix
+...[-.]            # Separator character
+...\d{4}           # Four-digit line number
+...$               # Anchor at end of string
+...'''
+print(re.search(regex, '414.9229', re.VERBOSE))
+
+print(re.search('foo bar', 'foo bar', re.VERBOSE))
+print(re.search('foo\ bar', 'foo bar', re.VERBOSE))
+
+# re.DEBUG display debugging information
